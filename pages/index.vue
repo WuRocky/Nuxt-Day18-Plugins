@@ -1,8 +1,19 @@
+
 <script setup>
+const { $useLoading } = useNuxtApp();
+
+const loadingHandler = $useLoading({
+  loader: "spinner",
+  backgroundColor: "#5f99ff",
+  width: 200,
+  height: 200,
+  color: '#000000',
+});
+
 function openLoading() {
-  // 開啟讀取效果
+  const loader = loadingHandler.show();
   setTimeout(() => {
-    // 關閉讀取效果
+    loader.hide();
   }, 1000);
 }
 </script>
